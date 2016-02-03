@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = 'br.com.thiagoft.gradle.Application'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    baseName = 'grade-setup'
+    version =  '1.0.0'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:1.3.2.RELEASE")
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
